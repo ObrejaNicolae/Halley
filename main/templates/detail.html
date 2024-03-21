@@ -48,24 +48,24 @@
 					</form>
 				</div>
 			</div>
-			<!-- Previous Comments -->
+			
 			<div class="card my-4">
 				<h6 class="card-header">Comments</h6>
 				<div class="card-body">
 					{% for comment in comments %}
 					<blockquote class="blockquote text-right">
-					  <p class="mb-0">{{comment.comment}}</p>
-					  <footer class="blockquote-footer">{{comment.name}} <cite title="Source Title">{{comment.email}}</cite></footer>
+					  <p class="mb-0">{{comment.comment}}</p><br>
+					  <footer class="blockquote-footer">{{comment.name}} <br><cite title="Source Title">{{comment.email}}</cite></footer>
 					</blockquote>
 					<hr/>
 					{% endfor %}
 				</div>
 			</div>
 		</div>
-		<!-- Related News -->
+		
 		<div class="col-md-4">
 			<h3 class="mb-3 border-bottom pb-1">From this Category</h3>
-			<!-- Category Box -->
+		
 			{% for news in related_news %}
 			<div class="card mb-3 shadow">
                 <img src="/media/{{news.image}}" class="card-img-top" alt="{{news.title}}">

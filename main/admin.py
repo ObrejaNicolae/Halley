@@ -3,7 +3,7 @@ from .models import Category
 from .models import News
 from .models import Comment
 
-# Register your models here.
+
 admin.site.register(Category)
 
 class AdminNews(admin.ModelAdmin):

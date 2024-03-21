@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='imgs/')
+    image = models.ImageField(upload_to='media/imgs/')
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -29,7 +29,7 @@ class Comment(models.Model):
     name = models.CharField(max_length = 200)
     email = models.CharField(max_length = 200)
     comment = models.TextField()
-    status= models.BooleanField(default = False)
+    status= models.BooleanField(default = True)
 
     
     def __str__(self):

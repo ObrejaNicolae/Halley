@@ -11,14 +11,14 @@ def home(request):
         'three_categories':three_categories
     })
 
-# All News
+
 def all_news(request):
     all_news=News.objects.all()
     return render(request,'all-news.html',{
         'all_news':all_news
     })
 
-# Detail Page
+
 def detail(request,id):
     news=News.objects.get(pk=id)
     if request.method=='POST':
@@ -29,12 +29,12 @@ def detail(request,id):
             news=news,
             name=name,
             email=email,
-            comment=comment
+            comment=comment,
         )
         messages.success(request,'Comment submitted but in moderation mode.')
     category=Category.objects.get(id=news.category.id)
     rel_news=News.objects.filter(category=category).exclude(id=id)
-    comments=Comment.objects.filter(news=news,status=True).order_by('-id')
+    comments=Comment.objects.filter(news=news,status=True).order_by('id')
     return render(request,'detail.html',{
         'news':news,
         'related_news':rel_news,
